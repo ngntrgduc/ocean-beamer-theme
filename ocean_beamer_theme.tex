@@ -1,0 +1,283 @@
+\documentclass{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage{tikz}
+\usepackage{multicol}
+
+\usetheme{Antibes}
+
+% Add page numbers in each slide
+\setbeamertemplate{footline}[frame number] 
+
+% Make navigations pane disappear
+\setbeamertemplate{navigation symbols}{} 
+
+% Define custom colors
+\definecolor{MyCyan1}{RGB}{0, 170, 170}
+\definecolor{MyCyan2}{RGB}{0, 221, 221}
+\definecolor{MyCyan3}{RGB}{68, 255, 255}
+
+% Change color of bullets in table of contents
+\setbeamerfont{section number projected}{
+  family=\rmfamily,series=\bfseries,size=\normalsize}
+\setbeamercolor{section number projected}{bg=MyCyan3,fg=white}
+
+\setbeamerfont{subsection number projected}{
+  family=\rmfamily,series=\bfseries,size=\normalsize}
+\setbeamercolor{subsection number projected}{bg=MyCyan3,fg=white}
+
+\setbeamerfont{subsubsection number projected}{
+  family=\rmfamily,series=\bfseries,size=\normalsize}
+\setbeamercolor{subsubsection number projected}{bg=MyCyan3,fg=white}
+
+% Change section color in table of contents
+\setbeamercolor{section in toc}{fg=MyCyan3}
+
+% Change item  bullets style
+\setbeamercolor{itemize item}{fg=MyCyan3}
+\setbeamertemplate{itemize subitem}{$\blacktriangleright$}
+\setbeamercolor{itemize subitem}{fg=MyCyan3}
+\setbeamertemplate{itemize subsubitem}{\textbullet}
+\setbeamercolor{itemize subsubitem}{fg=MyCyan3}
+
+
+% Change enumerate bullets style
+\setbeamertemplate{enumerate item}{
+  \usebeamercolor{item projected}
+  \raisebox{0.8pt}{\colorbox{MyCyan3}{\color{white}\footnotesize\insertenumlabel}}
+}
+
+\setbeamertemplate{enumerate subitem}{
+  \usebeamercolor{item projected}
+  \raisebox{0.8pt}{\colorbox{MyCyan3}{\color{white}\footnotesize\insertenumlabel.\insertsubenumlabel}}
+}
+
+\setbeamertemplate{enumerate subsubitem}{
+  \usebeamercolor{item projected}
+  \raisebox{0.8pt}{\colorbox{MyCyan3}{\color{white}\footnotesize\insertenumlabel.\insertsubenumlabel.\insertsubsubenumlabel}}
+}
+
+% Change standard block colors
+\setbeamercolor{block title}{bg=blue, fg=white}
+\setbeamercolor{block body}{bg=blue!10}
+
+% Change alert block colors
+\setbeamercolor{block title alerted}{fg=white, bg=red}
+\setbeamercolor{block body alerted}{bg=red!10}
+
+% Change example block colors
+\setbeamercolor{block title example}{fg=white, bg=green}
+\setbeamercolor{block body example}{bg=green!10}
+
+% Change heading colors
+\setbeamercolor{title in head/foot}{fg=white, bg=black}
+\setbeamercolor{section in head/foot}{fg=white, bg=MyCyan1}
+\setbeamercolor{subsection in head/foot}{fg=white, bg=MyCyan2}
+\setbeamercolor{title}{fg=white, bg=MyCyan3}
+\setbeamercolor{frametitle}{fg=white, bg=MyCyan3}
+
+% Add Author Name, Short Title, Date, and Pages to Footline
+\makeatletter
+\setbeamertemplate{footline}
+{
+\leavevmode%
+\hbox{%
+    \begin{beamercolorbox}[wd=.5\paperwidth,ht=2.25ex,dp=1ex,center]{section in head/foot}%
+        \usebeamerfont{author in head/foot}\insertshortauthor~~\beamer@ifempty{\insertshortinstitute}{}{(\insertshortinstitute)} \hspace*{10em}
+    \end{beamercolorbox}%
+  
+    \begin{beamercolorbox}[wd=.5\paperwidth,ht=2.25ex,dp=1ex,right]{section in head/foot}%
+        \usebeamerfont{date in head/foot}\insertshortdate{}\hspace*{2em}
+        \insertframenumber{} / \inserttotalframenumber\hspace*{2ex}
+    \end{beamercolorbox}}%
+\vskip0pt%
+}
+\makeatother
+
+% Preamble ------------------------------------------------------------------------------------------------------------------------------
+\title[Ocean Beamer Theme]{\huge Ocean Beamer Theme}
+\author[ngntrgduc]{\large Nguyen Trung Duc}
+\institute[HCMUS]{
+  \inst{}
+  \large VNUHCM - University of Science \\Faculty of Mathematics and Computer Science\\
+}
+\date{\today}
+
+% Insert logo ----------------------------------------------------------------------------------------------------------------------------
+% 
+% At the bottom right :
+% \titlegraphic{
+% \begin{tikzpicture}[overlay,remember picture]
+% \node[left=0cm] at (current page.-30){
+%     \includegraphics[height=2cm]{logo.png}
+% };
+% \end{tikzpicture}
+% }
+%
+% Or at center :
+% \titlegraphic{
+% \includegraphics[height=2.5cm]{logo.png}
+% }
+
+
+% Begin presentation---------------------------------------------------------------
+\begin{document}
+
+%Creates the title slide.
+\begin{frame}[plain] % [Plain] use to hide headline and footline of the first slide
+    \maketitle 
+\end{frame}
+
+
+% Table of Contents slide-------------------------------------------------------
+\AtBeginSection[]{
+    \begin{frame}<beamer>
+        \frametitle{Table of Contents}
+        \begin{columns}[T]
+            \begin{column}{.5\textwidth}
+                \tableofcontents[currentsection,sections=1-4]
+            \end{column}
+            \begin{column}{.5\textwidth}
+                \tableofcontents[currentsection,sections=5-8]
+            \end{column}
+        \end{columns}
+    \end{frame}
+}
+
+\begin{frame}
+    \frametitle{Table of Contents}
+    \begin{columns}[t]
+        \begin{column}{.5\textwidth}
+            \tableofcontents[sections={1-4}]
+        \end{column}
+        \begin{column}{.5\textwidth}
+            \tableofcontents[sections={5-8}]
+        \end{column}
+    \end{columns}
+\end{frame}
+
+
+%----------------------------------------------------------------
+
+\section{First section}
+\subsection{Enumerate}
+\begin{frame}
+    \frametitle{Enumerate}
+    \begin{enumerate}
+        \item Sample 1.
+        \item Sample 2.
+            \begin{enumerate}
+                \item Sample 1.
+                    \begin{enumerate}
+                        \item Sample 1.
+                        \item Sample 2.
+                    \end{enumerate}
+                \item Sample 2.
+            \end{enumerate}
+    \end{enumerate}
+\end{frame}
+
+
+\subsection{Itemize}
+\begin{frame}{Itemize}
+    \begin{itemize}
+        \item Item 1.
+        \item Item 2.
+            \begin{itemize}
+                \item Subitem 1.
+                    \begin{itemize}
+                        \item Subsubitem 1.
+                        \item Subsubitem 2.
+                    \end{itemize}
+                \item Subitem 2.
+            \end{itemize}
+    \end{itemize}
+\end{frame}
+
+
+\section{Second section}
+\subsection{Sample block}
+\begin{frame}
+    \frametitle{Sample block}
+    \begin{block}{Remark}
+        Sample text in box.
+    \end{block} 
+        
+    \begin{alertblock}{Important theorem}
+        Sample text in box.
+    \end{alertblock}
+        
+    \begin{examples}
+        Sample text in box.
+    \end{examples}
+\end{frame}
+    
+\subsection{Two-column slide}
+\begin{frame}
+    \frametitle{Two-column slide}
+    \begin{columns}
+    \column{0.5\textwidth}
+    This is a text in first column. \[\mbox{Some math : }y=f(x)\]
+        \begin{itemize}
+            \item First item in first column.
+            \item Second item in first column.
+        \end{itemize}
+    
+    \column{0.5\textwidth}
+    This is a text in second column. \\
+    This is another text in second column. 
+    \end{columns}
+\end{frame}
+
+
+
+
+\section{Third section}
+\subsection{First subsection}
+\begin{frame}{First subsection}
+    \alert{This text highlighted} because it's \colorbox{MyCyan3}{important.}
+\end{frame}
+
+\section{Fourth section}
+\subsection{First subsection}
+\begin{frame}{First subsection}
+    Nothing here.
+\end{frame}
+
+
+\section{Fifth section}
+\subsection{First subsection}
+\begin{frame}{First subsection}
+    This is a text.
+\end{frame}
+
+
+\subsection{Second subsection}
+\begin{frame}{Second subsection}
+    This is another text.
+\end{frame}
+
+
+\section{Conclusion}
+\begin{frame}{Conclusion}
+    \begin{itemize}
+        \item Conclusion 1
+        \item Conclusion 2
+    \end{itemize}
+\end{frame}
+
+
+\begin{frame}{Q\&A}
+    \begin{center}
+        \Huge \textcolor{MyCyan3}{Thank You}
+    \end{center}
+\end{frame}
+ 
+
+\begin{frame}{References}
+    \begin{itemize}
+        \item References 1
+        \item References 2
+    \end{itemize}
+\end{frame}
+
+\end{document}
