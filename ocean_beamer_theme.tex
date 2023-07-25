@@ -2,80 +2,79 @@
 \usepackage[utf8]{inputenc}
 \usepackage{tikz}
 \usepackage{multicol}
+\usepackage{xcolor}
 
-\usetheme{Antibes}
 
-% Add page numbers in each slide
-\setbeamertemplate{footline}[frame number] 
-
-% Make navigations pane disappear
-\setbeamertemplate{navigation symbols}{} 
-
+% Coloring ---------------------------------------------------------------
 % Define custom colors
-\definecolor{MyCyan1}{RGB}{0, 170, 170}
-\definecolor{MyCyan2}{RGB}{0, 221, 221}
-\definecolor{MyCyan3}{RGB}{68, 255, 255}
+\definecolor{ocean}{RGB}{4, 165, 229}
+\definecolor{green}{RGB}{64, 160, 43}
+% \definecolor{magenta}{RGB}{230, 69, 83}
+% \setbeamercolor{title in head/foot}{fg=white, bg=black}      % used for Antibes theme
+\setbeamercolor{section in head/foot}{fg=white, bg=ocean}      % need this to have color in footer
+% \setbeamercolor{subsection in head/foot}{fg=white, bg=ocean} % used for Antibes theme
+\setbeamercolor{title}{fg=white, bg=ocean}                     % title color
+\setbeamercolor{frametitle}{fg=white, bg=ocean}                % color of frame title
 
+% Table of contents customization ---------------------------------------------------------------
 % Change color of bullets in table of contents
-\setbeamerfont{section number projected}{
-  family=\rmfamily,series=\bfseries,size=\normalsize}
-\setbeamercolor{section number projected}{bg=MyCyan3,fg=white}
+\setbeamerfont{section number projected}{family=\rmfamily, series=\bfseries, size=\normalsize}
+\setbeamercolor{section number projected}{bg=ocean, fg=white}
 
-\setbeamerfont{subsection number projected}{
-  family=\rmfamily,series=\bfseries,size=\normalsize}
-\setbeamercolor{subsection number projected}{bg=MyCyan3,fg=white}
+\setbeamerfont{subsection number projected}{family=\rmfamily, series=\bfseries, size=\normalsize}
+\setbeamercolor{subsection number projected}{bg=ocean, fg=white}
 
-\setbeamerfont{subsubsection number projected}{
-  family=\rmfamily,series=\bfseries,size=\normalsize}
-\setbeamercolor{subsubsection number projected}{bg=MyCyan3,fg=white}
+\setbeamerfont{subsubsection number projected}{family=\rmfamily,series=\bfseries,size=\normalsize}
+\setbeamercolor{subsubsection number projected}{bg=ocean, fg=white}
 
 % Change section color in table of contents
-\setbeamercolor{section in toc}{fg=MyCyan3}
+\setbeamercolor{section in toc}{fg=ocean}
+% Add square bullet for section in table of contents
+\setbeamertemplate{section in toc}[square]
 
+% Change bullets style ---------------------------------------------------------------
 % Change item  bullets style
-\setbeamercolor{itemize item}{fg=MyCyan3}
-\setbeamertemplate{itemize subitem}{$\blacktriangleright$}
-\setbeamercolor{itemize subitem}{fg=MyCyan3}
-\setbeamertemplate{itemize subsubitem}{\textbullet}
-\setbeamercolor{itemize subsubitem}{fg=MyCyan3}
+\setbeamertemplate{items}[square] % square symbol for items
+\setbeamercolor{itemize item}{fg=ocean}
 
+\setbeamertemplate{itemize subitem}{$\blacktriangleright$} % triangle for subitems
+\setbeamercolor{itemize subitem}{fg=ocean}
+
+\setbeamertemplate{itemize subsubitem}{\textbullet} % bullet for subsubitems
+\setbeamercolor{itemize subsubitem}{fg=ocean}
 
 % Change enumerate bullets style
 \setbeamertemplate{enumerate item}{
   \usebeamercolor{item projected}
-  \raisebox{0.8pt}{\colorbox{MyCyan3}{\color{white}\footnotesize\insertenumlabel}}
+  \raisebox{0.8pt}{\colorbox{ocean}{\color{white}\footnotesize\insertenumlabel}}
 }
 
 \setbeamertemplate{enumerate subitem}{
   \usebeamercolor{item projected}
-  \raisebox{0.8pt}{\colorbox{MyCyan3}{\color{white}\footnotesize\insertenumlabel.\insertsubenumlabel}}
+  \raisebox{0.8pt}{\colorbox{ocean}{\color{white}\footnotesize\insertenumlabel.\insertsubenumlabel}}
 }
 
 \setbeamertemplate{enumerate subsubitem}{
   \usebeamercolor{item projected}
-  \raisebox{0.8pt}{\colorbox{MyCyan3}{\color{white}\footnotesize\insertenumlabel.\insertsubenumlabel.\insertsubsubenumlabel}}
+  \raisebox{0.8pt}{\colorbox{ocean}{\color{white}\footnotesize\insertenumlabel.\insertsubenumlabel.\insertsubsubenumlabel}}
 }
 
+% Block customization ---------------------------------------------------------------
+% \setbeamertemplate{blocks}[rounded] % Set rounded for block
 % Change standard block colors
-\setbeamercolor{block title}{bg=blue, fg=white}
-\setbeamercolor{block body}{bg=blue!10}
+\setbeamercolor{block title}{fg=white, bg=ocean}
+\setbeamercolor{block body}{bg=ocean!10}
 
 % Change alert block colors
-\setbeamercolor{block title alerted}{fg=white, bg=red}
-\setbeamercolor{block body alerted}{bg=red!10}
+\setbeamercolor{block title alerted}{fg=white, bg=magenta}
+\setbeamercolor{block body alerted}{bg=magenta!10}
 
 % Change example block colors
 \setbeamercolor{block title example}{fg=white, bg=green}
 \setbeamercolor{block body example}{bg=green!10}
 
-% Change heading colors
-\setbeamercolor{title in head/foot}{fg=white, bg=black}
-\setbeamercolor{section in head/foot}{fg=white, bg=MyCyan1}
-\setbeamercolor{subsection in head/foot}{fg=white, bg=MyCyan2}
-\setbeamercolor{title}{fg=white, bg=MyCyan3}
-\setbeamercolor{frametitle}{fg=white, bg=MyCyan3}
-
-% Add Author Name, Short Title, Date, and Pages to Footline
+% Footer customization ---------------------------------------------------------------
+% Add Author Name, Short Title, Date, and Pages to Footline. Comment this to hide footer.
 \makeatletter
 \setbeamertemplate{footline}
 {
@@ -93,16 +92,24 @@
 }
 \makeatother
 
-% Preamble ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+% Make navigations pane disappear
+\setbeamertemplate{navigation symbols}{} 
+
+% \setbeamertemplate{footline}[frame number] % Add page numbers in each slide
+
+% \setbeamertemplate{page number in head/foot}{} % Remove slide number
+
+
+% Preamble ------------------------------------------------------------------------------------------------------------------------------
 \title[Ocean Beamer Theme]{\huge Ocean Beamer Theme}
 \author[ngntrgduc]{\large Nguyen Trung Duc}
 \institute[HCMUS]{
   \inst{}
-  \large VNUHCM - University of Science \\Faculty of Mathematics and Computer Science\\
+  \large University of Science - VNUHCM \\Faculty of Mathematics and Computer Science\\
 }
 \date{\today}
 
-% Insert logo -------------------------------------------------------------------------------------------------------------------------------------------------------------------
+% Insert logo ----------------------------------------------------------------------------------------------------------------------------
 % 
 % At the bottom right :
 % \titlegraphic{
@@ -119,7 +126,7 @@
 % }
 
 
-% Begin presentation ------------------------------------------------------------------------------------------------------------------------------------------------------------
+% Begin presentation---------------------------------------------------------------
 \begin{document}
 
 %Creates the title slide.
@@ -128,20 +135,21 @@
 \end{frame}
 
 
-% Table of Contents slide -------------------------------------------------------------------------------------------------------------------------------------------------------
-\AtBeginSection[]{
-    \begin{frame}<beamer>
-        \frametitle{Table of Contents}
-        \begin{columns}[T]
-            \begin{column}{.5\textwidth}
-                \tableofcontents[currentsection,sections=1-4]
-            \end{column}
-            \begin{column}{.5\textwidth}
-                \tableofcontents[currentsection,sections=5-8]
-            \end{column}
-        \end{columns}
-    \end{frame}
-}
+% Table of Contents slide-------------------------------------------------------
+% Uncomment this for show table of contents every section
+% \AtBeginSection[]{
+%     \begin{frame}<beamer>
+%         \frametitle{Table of Contents}
+%         \begin{columns}[T]
+%             \begin{column}{.5\textwidth}
+%                 \tableofcontents[currentsection,sections=1-4]
+%             \end{column}
+%             \begin{column}{.5\textwidth}
+%                 \tableofcontents[currentsection,sections=5-8]
+%             \end{column}
+%         \end{columns}
+%     \end{frame}
+% }
 
 \begin{frame}
     \frametitle{Table of Contents}
@@ -156,7 +164,8 @@
 \end{frame}
 
 
-%--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%----------------------------------------------------------------
+
 \section{First section}
 \subsection{Enumerate}
 \begin{frame}
@@ -233,7 +242,7 @@
 \section{Third section}
 \subsection{First subsection}
 \begin{frame}{First subsection}
-    \alert{This text highlighted} because it's \colorbox{MyCyan3}{important.}
+    \alert{This text highlighted} because it's \colorbox{magenta}{important.}
 \end{frame}
 
 \section{Fourth section}
@@ -265,9 +274,16 @@
 \end{frame}
 
 
-\begin{frame}{Q\&A}
+\begin{frame}[plain]
     \begin{center}
-        \Huge \textcolor{MyCyan3}{Thank You}
+        \Huge \textcolor{ocean}{Q \& A}
+    \end{center}
+\end{frame}
+
+
+\begin{frame}[plain]
+    \begin{center}
+        \Huge \textcolor{ocean}{Thank You}
     \end{center}
 \end{frame}
  
