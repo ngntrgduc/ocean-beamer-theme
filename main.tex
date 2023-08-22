@@ -1,0 +1,145 @@
+\documentclass[10pt]{beamer}
+% \documentclass[aspectratio=169, 10pt]{beamer} % For wider width
+\usepackage[]{ocean}
+\usepackage{ngntrgduc}
+
+
+% Preamble ---------------------------------------------------------------
+\title[Ocean Beamer Theme]{\huge Ocean Beamer Theme}
+\author[ngntrgduc]{\large Trung-Duc Nguyen}
+\institute[HCMUS]{
+  \inst{}
+  \large University of Science - VNUHCM \\Faculty of Mathematics and Computer Science\\
+}
+\date{\today}
+
+
+% Start ---------------------------------------------------------------
+\begin{document}
+
+\begin{frame}[plain] % [Plain] hide headline and footline of the first slide
+    \maketitle 
+\end{frame}
+
+\begin{frame}
+    \frametitle{Table of Contents}
+    \tableofcontents[subsectionstyle=hide]
+\end{frame}
+
+\section{First section}
+\subsection{Enumerate}
+\begin{frame}
+    \frametitle{Enumerate}
+    \begin{enumerate}
+        \item Sample 1.
+        \item Sample 2.
+            \begin{enumerate}
+                \item Sample 1.
+                    \begin{enumerate}
+                        \item Sample 1.
+                        \item Sample 2.
+                    \end{enumerate}
+                \item Sample 2.
+            \end{enumerate}
+    \end{enumerate}
+\end{frame}
+
+\subsection{Itemize}
+\begin{frame}{Itemize}
+    \begin{itemize}
+        \item Item 1.
+        \item Item 2.
+            \begin{itemize}
+                \item Subitem 1.
+                    \begin{itemize}
+                        \item Subsubitem 1.
+                        \item Subsubitem 2.
+                    \end{itemize}
+                \item Subitem 2.
+            \end{itemize}
+    \end{itemize}
+\end{frame}
+
+\section{Second section}
+\subsection{Block}
+\begin{frame}
+    \frametitle{Block}
+    \begin{block}{Normal block}
+        Normal box.
+    \end{block} 
+        
+    \begin{alertblock}{Alert}
+        Alert box.
+    \end{alertblock}
+        
+    \begin{examples}
+        Example box.
+    \end{examples}
+\end{frame}
+    
+\subsection{Two-column slide}
+\begin{frame}
+    \frametitle{Two-column slide}
+    \begin{columns}
+    \column{0.5\textwidth}
+    This is a text in first column. \[  e^{i\pi} + 1 = 0 \]
+        \begin{itemize}
+            \item First item in first column.
+            \item Second item in first column.
+        \end{itemize}
+    
+    \column{0.5\textwidth}
+    This is a text in second column. \\
+    This is another text in second column. 
+    \end{columns}
+\end{frame}
+
+\section{Third section}
+\subsection{First subsection}
+\begin{frame}{First subsection}
+    \alert{This text highlighted} because it's \color{ocean}{important.}
+\end{frame}
+
+\section{Fourth section}
+\subsection{First subsection}
+\begin{frame}{First subsection}
+    First subsection
+\end{frame}
+
+\subsection{Second subsection}
+\begin{frame}{Second subsection}
+    Second subsection
+\end{frame}
+
+\section{Conclusion}
+\begin{frame}{Conclusion}
+    \begin{itemize}
+        \item Conclusion 1
+        \item Conclusion 2
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[plain]
+    \begin{tikzpicture}[overlay, remember picture]
+        \node[anchor=center] at (current page.center) {
+            \Huge \textcolor{ocean}{Q \& A}
+        };
+    \end{tikzpicture}
+\end{frame}
+
+\begin{frame}[plain]
+    \begin{tikzpicture}[overlay, remember picture]
+        \node[anchor=center] at (current page.center) {
+            \Huge \textcolor{ocean}{Thank You}
+        };
+    \end{tikzpicture}
+\end{frame}
+
+\begin{frame}{References}
+    \begin{itemize}
+        \item References 1
+        \item References 2
+    \end{itemize}
+\end{frame}
+
+\end{document}

@@ -1,0 +1,94 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{ngntrgduc}[2022/03/08 ocean theme]
+
+% Coloring ---------------------------------------------------------------
+\definecolor{ocean}{RGB}{4, 165, 229}           % Define main colors
+\setbeamercolor{title}{fg=white, bg=ocean}      % title color
+
+\setbeamercolor{frametitle}{fg=ocean, bg=white} % color of frame title
+
+\DeclareOption{frametitle}{
+    % \renewcommand{\wordcolour}{sharelatexcolour}
+    \setbeamercolor{frametitle}{fg=white, bg=ocean} % color of frame title
+}
+\ProcessOptions\relax
+
+\setbeamerfont{frametitle}{size=\large, series=\bfseries}
+
+% Table of contents ---------------------------------------------------------------
+\setbeamercolor{section number projected}{bg=ocean, fg=white} % Color of bullets
+\setbeamercolor{section in toc}{fg=ocean}  % Sections color
+
+\DeclareOption{bullettoc}{
+    \setbeamerfont{section number projected}{family=\sffamily, series=\bfseries, size=\normalsize} % Font of bullets
+    \setbeamertemplate{section in toc}[square] % Add square bullet for sections
+}
+\ProcessOptions\relax
+
+% Bullets style ---------------------------------------------------------------
+% Item  bullets style
+% \setbeamertemplate{items}{\blacksquare} % square symbol for items
+\setbeamertemplate{items}{\textbullet} % bullet for items
+\setbeamercolor{itemize item}{fg=ocean}
+\setbeamercolor{itemize subitem}{fg=ocean}
+\setbeamercolor{itemize subsubitem}{fg=ocean}
+
+% Enumerate bullets style
+\setbeamertemplate{enumerate item}{
+  \usebeamercolor{item projected}{\color{ocean}\small\insertenumlabel}
+}
+\setbeamertemplate{enumerate subitem}{
+  \usebeamercolor{item projected}{\color{ocean}\footnotesize\insertenumlabel.\insertsubenumlabel}
+}
+\setbeamertemplate{enumerate subsubitem}{
+  \usebeamercolor{item projected}{\color{ocean}\scriptsize\insertenumlabel.\insertsubenumlabel.\insertsubsubenumlabel}
+}
+
+% Block ---------------------------------------------------------------
+\setbeamercolor{block title}{fg=white, bg=ocean}
+\setbeamercolor{block body}{bg=ocean!10}
+\setbeamercolor{block title alerted}{fg=white, bg=magenta}
+\setbeamercolor{block body alerted}{bg=magenta!10}
+\setbeamercolor{block title example}{fg=white, bg=teal}
+\setbeamercolor{block body example}{bg=teal!10}
+
+% Footer ---------------------------------------------------------------
+\setbeamertemplate{footline}[frame number]          % Add page numbers in each slide
+\setbeamercolor{page number in head/foot}{fg=ocean} % Change color of page numbers
+\setbeamerfont{page number in head/foot}{size=\tiny}   % Change page numbers font size
+\setbeamertemplate{navigation symbols}{}            % Make navigations pane disappear
+
+\DeclareOption{footer}{
+    \setbeamertemplate{footline}
+    {
+    \leavevmode%
+    \hbox{%
+        \begin{beamercolorbox}[wd=.5\paperwidth,ht=2.25ex,dp=1ex,center]{section in head/foot}%
+            \usebeamerfont{author in head/foot}\insertshortauthor~~\beamer@ifempty{\insertshortinstitute}{}{(\insertshortinstitute)} \hspace*{10em}
+        \end{beamercolorbox}%
+      
+        \begin{beamercolorbox}[wd=.5\paperwidth,ht=2.25ex,dp=1ex,right]{section in head/foot}%
+            \usebeamerfont{date in head/foot}\insertshortdate{}\hspace*{2em}
+            \insertframenumber{} / \inserttotalframenumber\hspace*{2ex}
+        \end{beamercolorbox}}%
+    \vskip0pt%
+    }
+    \setbeamercolor{section in head/foot}{fg=white, bg=ocean}
+}
+\DeclareOption{minimalfooter}{
+    \setbeamertemplate{footline}
+    {
+    \leavevmode%
+    \hbox{%
+        \begin{beamercolorbox}[wd=\paperwidth,ht=2.25ex,dp=1ex,leftskip=.3cm,rightskip=.3cm]{section in head/foot}%
+            \usebeamerfont{author in head/foot}\insertshortauthor~~\beamer@ifempty{\insertshortinstitute}{}{(\insertshortinstitute)}
+            \hfill
+            \insertframenumber{} / \inserttotalframenumber
+        \end{beamercolorbox}}%
+    }
+    \setbeamercolor{section in head/foot}{fg=white, bg=ocean}
+}
+\ProcessOptions\relax
+
+
+\setbeamersize{text margin left = 20pt, text margin right = 20pt} % Change margin of text
