@@ -3,13 +3,13 @@
 
 % Coloring ---------------------------------------------------------------
 \definecolor{ocean}{RGB}{4, 165, 229}           % Define main colors
-\setbeamercolor{title}{fg=white, bg=ocean}      % title color
+\setbeamercolor{title}{fg=white, bg=ocean}      % Title color
 
-\setbeamercolor{frametitle}{fg=ocean, bg=white} % color of frame title
+\setbeamercolor{frametitle}{fg=ocean, bg=white} % Color of frame title
 
 \DeclareOption{frametitle}{
     % \renewcommand{\wordcolour}{sharelatexcolour}
-    \setbeamercolor{frametitle}{fg=white, bg=ocean} % color of frame title
+    \setbeamercolor{frametitle}{fg=white, bg=ocean} % Color of frame title
 }
 \ProcessOptions\relax
 
@@ -28,7 +28,7 @@
 % Bullets style ---------------------------------------------------------------
 % Item  bullets style
 % \setbeamertemplate{items}{\blacksquare} % square symbol for items
-\setbeamertemplate{items}{\textbullet} % bullet for items
+\setbeamertemplate{items}{\textbullet} % Bullet for items
 \setbeamercolor{itemize item}{fg=ocean}
 \setbeamercolor{itemize subitem}{fg=ocean}
 \setbeamercolor{itemize subsubitem}{fg=ocean}
@@ -53,11 +53,12 @@
 \setbeamercolor{block body example}{bg=teal!10}
 
 % Footer ---------------------------------------------------------------
-\setbeamertemplate{footline}[frame number]          % Add page numbers in each slide
-\setbeamercolor{page number in head/foot}{fg=ocean} % Change color of page numbers
-\setbeamerfont{page number in head/foot}{size=\tiny}   % Change page numbers font size
-\setbeamertemplate{navigation symbols}{}            % Make navigations pane disappear
+\setbeamertemplate{footline}[frame number]                   % Add page numbers in each slide
+\setbeamercolor{page number in head/foot}{fg=ocean}          % Change color of page numbers
+\setbeamerfont{page number in head/foot}{size=\scriptsize}   % Change page numbers font size
+\setbeamertemplate{navigation symbols}{}                     % Make navigations pane disappear
 
+% footer: display footer with author, date, and pages
 \DeclareOption{footer}{
     \setbeamertemplate{footline}
     {
@@ -75,6 +76,8 @@
     }
     \setbeamercolor{section in head/foot}{fg=white, bg=ocean}
 }
+
+% minimalfooter: display footer with author and pages
 \DeclareOption{minimalfooter}{
     \setbeamertemplate{footline}
     {
