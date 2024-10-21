@@ -1,7 +1,7 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{ngntrgduc}[2022/03/08 ocean theme]
 
-% Coloring ---------------------------------------------------------------
+% Coloring
 \definecolor{ocean}{RGB}{4, 165, 229}           % Define main colors
 \setbeamercolor{title}{fg=white, bg=ocean}      % Title color
 
@@ -11,11 +11,10 @@
     % \renewcommand{\wordcolour}{sharelatexcolour}
     \setbeamercolor{frametitle}{fg=white, bg=ocean} % Color of frame title
 }
-\ProcessOptions\relax
 
 \setbeamerfont{frametitle}{size=\large, series=\bfseries}
 
-% Table of contents ---------------------------------------------------------------
+% Table of contents
 \setbeamercolor{section number projected}{bg=ocean, fg=white} % Color of bullets
 \setbeamercolor{section in toc}{fg=ocean}  % Sections color
 
@@ -23,9 +22,8 @@
     \setbeamerfont{section number projected}{family=\sffamily, series=\bfseries, size=\normalsize} % Font of bullets
     \setbeamertemplate{section in toc}[square] % Add square bullet for sections
 }
-\ProcessOptions\relax
 
-% Bullets style ---------------------------------------------------------------
+% Bullets style 
 % Item  bullets style
 % \setbeamertemplate{items}{\blacksquare} % square symbol for items
 \setbeamertemplate{items}{\textbullet} % Bullet for items
@@ -44,7 +42,7 @@
   \usebeamercolor{item projected}{\color{ocean}\scriptsize\insertenumlabel.\insertsubenumlabel.\insertsubsubenumlabel}
 }
 
-% Block ---------------------------------------------------------------
+% Block
 \setbeamercolor{block title}{fg=white, bg=ocean}
 \setbeamercolor{block body}{bg=ocean!10}
 \setbeamercolor{block title alerted}{fg=white, bg=magenta}
@@ -52,7 +50,7 @@
 \setbeamercolor{block title example}{fg=white, bg=teal}
 \setbeamercolor{block body example}{bg=teal!10}
 
-% Footer ---------------------------------------------------------------
+% Footer
 \setbeamertemplate{footline}[frame number]                   % Add page numbers in each slide
 \setbeamercolor{page number in head/foot}{fg=ocean}          % Change color of page numbers
 \setbeamerfont{page number in head/foot}{size=\scriptsize}   % Change page numbers font size

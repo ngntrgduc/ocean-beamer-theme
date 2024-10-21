@@ -1,6 +1,11 @@
 \documentclass[10pt]{beamer}
 % \documentclass[aspectratio=169, 10pt]{beamer} % For wider width
-\usepackage[]{ocean}
+\usepackage[
+    frametitle,
+    bullettoc,
+    % footer,
+    % minimalfooter
+]{ocean}
 \usepackage{ngntrgduc}
 
 % Preamble ---------------------------------------------------------------
@@ -117,7 +122,7 @@
 \begin{frame}[plain]
     \begin{tikzpicture}[overlay, remember picture]
         \node[anchor=center] at (current page.center) {
-            \Huge \textcolor{ocean}{Q \& A}
+            \bfseries \Huge \textcolor{ocean}{Q \& A}
         };
     \end{tikzpicture}
 \end{frame}
@@ -125,7 +130,7 @@
 \begin{frame}[plain]
     \begin{tikzpicture}[overlay, remember picture]
         \node[anchor=center] at (current page.center) {
-            \Huge \textcolor{ocean}{Thank You}
+            \bfseries \Huge \textcolor{ocean}{Thank You}
         };
     \end{tikzpicture}
 \end{frame}
