@@ -12,7 +12,7 @@ You can find the demo [here](https://github.com/ngntrgduc/ocean-beamer-theme/blo
 ]{ocean}
 ```
 - `frametitle`: Add ocean frame for title on each slides
-- `bulletoc`: Add bullets for section in toc
+- `bullettoc`: Add bullets for section in toc
 - `footer`: Add footer: Author, Institute, Date, Pages
 - `minimalfooter`: Add minimal footer: Author, Pages
 
